@@ -1,0 +1,29 @@
+{
+  "name": "anagolay-dev",
+  "version": "0.1.0",
+  "description": "Sensio development portal, wiki and knowledge base",
+  "main": "index.js",
+  "authors": {
+    "name": "Daniel Maricic",
+    "email": "daniel@woss.io"
+  },
+  "repository": "https://gitlab.com/anagolay/development-portal",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.8.0",
+    "@vuepress/plugin-medium-zoom": "^1.8.0",
+    "standardx": "^7.0.0",
+    "vuepress": "^1.8.0",
+    "vuepress-plugin-git-log": "^1.0.1",
+    "vuepress-plugin-mermaidjs": "^1.8.1",
+    "vuepress-theme-succinct": "^1.7.2"
+  },
+  "dependencies": {
+    "vuepress-theme-default-prefers-color-scheme": "^2.0.0",
+    "vuepress-theme-reco": "^1.6.1"
+  }
+}
