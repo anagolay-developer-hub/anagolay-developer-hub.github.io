@@ -95,7 +95,7 @@ Install the [Homebrew package manager](https://brew.sh/), then run:
 brew install openssl cmake llvm
 ```
 
-Sensio uses the Rust programming language. You should
+Anagolay uses the Rust programming language. You should
 [install Rust](https://www.rust-lang.org/tools/install) using `rustup`:
 
 Linux based:
@@ -122,14 +122,14 @@ This will be prepared when you execute the `init` script.
 
 ### Rustup Update
 
-Sensio always uses the latest version of Rust stable and nightly for compilation. To ensure your
+Anagolay always uses the latest version of Rust stable and nightly for compilation. To ensure your
 Rust compiler is always up to date, you should run:
 
 ```
 rustup update
 ```
 
-This may even solve compilation issues you face when working with Sensio.
+This may even solve compilation issues you face when working with Anagolay.
 
 ### Notes pgp move
 

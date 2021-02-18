@@ -1,6 +1,4 @@
-# Sensio Wiki
-
-> Sensio projects wiki and knowledgebase
+# Anagolay Wiki and Developer Hub
 
 ## Development
 
@@ -9,4 +7,18 @@ yarn dev
 yarn build
 ```
 
-For more details, please head to [Sensio.dev](https://anagolay.dev)
+For more details, please head to [Anagolay.dev](https://anagolay.dev)
+
+```bash
+sudo apt-get update
+sudo apt-get install pngquant jpegoptim
+```
+
+## Image optimization
+
+```bash
+
+jpegoptim --size=100k docs/**/*.jpg
+pngquant 256 docs/**/*.png
+
+```

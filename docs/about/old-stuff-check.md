@@ -54,7 +54,7 @@ Example of is located [here](https://runkit.com/woss/simple-generation-of-conten
 
 # Creative Work Claim Type
 
-The Creative Work claim type is a backbone of the SensioID claims ecosystem. Most other claims in the ecosystem will reference a creative work. The most generic kind of creative work, including books, movies, photographs, software programs, etc.
+The Creative Work claim type is a backbone of the AnagolayID claims ecosystem. Most other claims in the ecosystem will reference a creative work. The most generic kind of creative work, including books, movies, photographs, software programs, etc.
 
 The purpose of the Creative Work claim type is to standardize the format for all the claims, to anchor the data to blockchain and give insight into owners rights and restrictions
 
@@ -102,7 +102,7 @@ graph LR
 
 ## Security
 
-Find out how to [report security issues or bugs](security.md) to Sensio development team.
+Find out how to [report security issues or bugs](security.md) to Anagolay development team.
 
 ## Links
 
@@ -147,7 +147,7 @@ function generateCameraContentHash(payload: CameraContentPayload) {
 
 > Noun
 >
-> [sēnsiō](<(https://en.wiktionary.org/wiki/sensio)>) (genitive sēnsiōnis); third declension
+> [sēnsiō](<(https://en.wiktionary.org/wiki/Anagolay)>) (genitive sēnsiōnis); third declension
 >
 > (rare) thought
 
@@ -167,8 +167,8 @@ Ownership claim type extends the Creative Work Claim type.
 ### Example
 
 Alice owns the **Canon 750D** camera and the **Canon 18m-135m IS USM** lens that she uses to take most of the pictures.
-She used the [SOP](../glossary.md#sensio-ownership-flow) to verify the fact that she owns the equipment.
-SensioID generates the claim of the ownership with the 100% ownership.
+She used the [SOP](../glossary.md#Anagolay-ownership-flow) to verify the fact that she owns the equipment.
+AnagolayID generates the claim of the ownership with the 100% ownership.
 
 ```json
 {
@@ -183,9 +183,9 @@ SensioID generates the claim of the ownership with the 100% ownership.
 
 ![user sof camera](/assets/user-sof-camera-flow.png)
 
-# About Sensio Identity (SensioID)
+# About Anagolay Identity (AnagolayID)
 
-> SensioID is a hybrid [DID](definitions.md#did) and KeyManager fot (de)centralized PKI.
+> AnagolayID is a hybrid [DID](definitions.md#did) and KeyManager fot (de)centralized PKI.
 
 # must read
 
@@ -206,7 +206,7 @@ My DID on ELEMENT-did.com
 My DID on blockstack
 `woss.id.blockstack` and `ID-1H291YHCzQFq369ggaxdUtU3bGUtZvFgzV`
 
-# About Sensio Photo
+# About Anagolay Photo
 
 all encrypted by default
 

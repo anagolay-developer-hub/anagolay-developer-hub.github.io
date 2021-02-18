@@ -2,15 +2,15 @@
 title: Proof of Existence (v0.1.0)
 ---
 
-# Intro to Sensio Network, Rules, and Proofs
+# Intro to Anagolay Network, Rules, and Proofs
 
 Hi, and welcome! 🙋‍♀️🙋‍♂️
 
-This tutorial explains what Sensio Network is about and helps you create your first [Rule](/network/protocol/rule.html#rule) and [Proof](/network/protocol/proof.html#proof). Furthermore, you will learn how the two are connected and how we can use them to prove the copyright of a digital asset and equipment ownership.
+This tutorial explains what Anagolay Network is about and helps you create your first [Rule](/network/protocol/rule.html#rule) and [Proof](/network/protocol/proof.html#proof). Furthermore, you will learn how the two are connected and how we can use them to prove the copyright of a digital asset and equipment ownership.
 
 ## Intro
 
-Sensio Network is the decentralized platform for creation of verifiable proof statements for any data or workflow. Using flexibility of the Rule implementation on top of the data, we create, organize, and store the proofs. These proofs can be searched, linked, compared, embedded, and published together with the original data.
+Anagolay Network is the decentralized platform for creation of verifiable proof statements for any data or workflow. Using flexibility of the Rule implementation on top of the data, we create, organize, and store the proofs. These proofs can be searched, linked, compared, embedded, and published together with the original data.
 
 Our current focus is to build a robust platform for creating, validating, storing and embedding copyrights and ownerships of multimedia files, primarily photos. We aim to create a trustless platform that anyone can use to create proofs of ownership (for photography equipment) and photo copyrights that work even if a photo was corrupted, stolen or its metadata was deleted.
 
@@ -59,12 +59,12 @@ Now, when we have all the knowledge, let's dive in and create the rule and the p
 
 ## Create the rule
 
-First of all, go to http://explorer.sensio.network/ the website we will be using to create the rules and the proofs.
+First of all, go to http://explorer.Anagolay.network/ the website we will be using to create the rules and the proofs.
 
 This screen shows you many things but 3 things of interest to us:
 
 1. Create your own custom rule ( **Create Rule** orange button )
-2. **Create default rules**, they are Sensio rules, available to use for Camera, Lens, and Photo. They come preinstalled so you don't have to create them.
+2. **Create default rules**, they are Anagolay rules, available to use for Camera, Lens, and Photo. They come preinstalled so you don't have to create them.
 3. A user, Alice is the user who will OWN the proof, it will be the account that will pay the network fees. You can also choose Bob for the fun of it.
 
 Let's click on the **1. Create PoE Rule** in the navigation bar or that orange **Create Rule** button
