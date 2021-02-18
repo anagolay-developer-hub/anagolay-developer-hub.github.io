@@ -1,21 +1,27 @@
 ---
-home: true
-heroImage: /assets/logo-current-256.png
-tagline: A Decentralized and distributed flow based proof generation for photo copyrights and camera equipment ownerships
-actionText: Quick Start →
-actionLink: /tutorials/proof-of-existence-v0.1.0
-features:
-  - title: Protocol & Pallets
-    details: Decentralized and provable proof generation based on rules and operations
-  - title: Copyrights and Ownerships
-    details: Provable and legally valid statements of copyright and ownerships
-  - title: Renting and licenses
-    details: Rent your equipment and get paid in crypto
-  - title: Copyright follows the Equipment
-    details: When you have the equipment verified, anyone who rents it, it will have automatically assigned correct copyright
-  - title: Smart contract based rental agreements
-    details: Upon successful transaction ownerships will be transferred temporarily and upon the expiration returned to the original owner
-  - title: Auto copyrights
-    details: Automatically generated proofs of photo copyright based on verified equipment
-footer: Made by people around the 🌍🌏🌎 with ❤️
+title: What is Anagolay?
+sidebar: true
 ---
+
+# What is Anagolay?
+
+Anagolay is a peer-to-peer network that stores records of Ownership and Copyright for any multi-media. [Proofs](./about/proof.md) and [Statements](./about/statement.md) are one of the stored data types and most user centric. Additionally Anagolay stores the [Rules](./about/rule.md) and [Operations](./about/operation.md) which are the backbone for generating the Proofs and Statements. The last two are developer oriented.
+
+Anagolay comes with built-in economic incentives to ensure the Rules and Operations are correctly implemented, audited and tested by the community.
+
+Anagolay includes a blockchain and native utility token (THT). Participants on the network can earn the THT by validating the Rules and Operations or being the chain validator.
+
+## For users
+
+Anagolay brings the traceability of the implemented process for Copyright and Ownership statements.
+This means, once you verify your camera, the copyrights are yours, and nobody can take them away.
+
+![Anagolay-Network-Statements&Claims](/assets/statements-and-claims.jpg)
+
+## For developers
+
+Imagine the world where thousands of developers implementing the same transparent process for the same or similar input data and getting the predictive outputs that can be verified against already existing Proofs and Statements.
+
+## Vision
+
+Our vision is to bring provable statements of copyright and ownership to everyone on the planet.

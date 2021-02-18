@@ -1,5 +1,5 @@
 ---
-title: Sensio Network Tutorials
+title: Anagolay Network Tutorials
 ---
 
 # Welcome to the Tutorial Section
@@ -13,5 +13,3 @@ This demo does not require any actual money or transaction from your end, we use
 :::
 
 Please check out the tutorial list on the left side or just dive in with the first one [Proof of Existence (v0.1.0)](./proof-of-existence-v0.1.0.md)
-
-

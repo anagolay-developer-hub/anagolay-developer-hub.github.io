@@ -1,14 +1,9 @@
 {
   "cSpell.words": [
-    "Sensio's",
-    "docsify",
+    "anagolay",
     "grammarly",
-    "opsys",
-    "opui",
-    "sensio",
     "sigs"
   ],
-  "eslint.enable": true,
   "eslint.workingDirectories": ["code"],
   "liveServer.settings.port": 5501,
   "workbench.colorTheme": "Default Dark+",
@@ -16,15 +11,15 @@
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 100,
     "editor.quickSuggestions": true,
-    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

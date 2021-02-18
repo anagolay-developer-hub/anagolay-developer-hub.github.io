@@ -11,7 +11,7 @@ sequenceDiagram
   participant user
   participant app
   participant api
-  participant SensioNetwork
+  participant AnagolayNetwork
   participant db
 
   api->>app: Copyright statement prepared
@@ -19,8 +19,8 @@ sequenceDiagram
   user->>app: Signs the statement
   note over user, user: Any flow works
   app->>api: Send the signed statement
-  api-->>SensioNetwork: Create the signed copyright statement
-  SensioNetwork-->>api: NET_OK() here is the TXID
+  api-->>AnagolayNetwork: Create the signed copyright statement
+  AnagolayNetwork-->>api: NET_OK() here is the TXID
   api-->>db: Save the reference to the user SSI/DID/Account
   db-->>api: DB_OK()
   api->>app: Success, here is the TXID

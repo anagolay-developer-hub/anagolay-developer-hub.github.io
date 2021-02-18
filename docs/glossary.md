@@ -44,9 +44,9 @@ Describes smth
 
 ## Discovery Index
 
-## Sensio Blockchain
+## Anagolay Blockchain
 
-SensioNetwork's blockchain (Sensio Blockchain) component is built on top of the interoperable [Polkadot Network](https://polkadot.network/) which
+AnagolayNetwork's blockchain (Anagolay Blockchain) component is built on top of the interoperable [Polkadot Network](https://polkadot.network/) which
 
 ## Successful participation
 
@@ -54,7 +54,7 @@ Participation where the user was participating without the intention to cheat an
 
 Example:
 
-Lets say that we have a following event `Train the AI model on snake photos` where successful participation will grant each user 10THT. Each user (this is a user f the app that knows these things like sensio.photo) broadcast the notification about that event to all its users. Users who decide to participate must follow the rules and requirements of the event, sending the photos with `snakes` only, correctly tagged and titled. Users who follow these rules and correctly send photos upon finished event are considered to be a **successful participant** and therefor can claim their 10THT. Users who send wrong data, photo contains a dog and a cat but it's tagged as a `snake`, are considered **unsuccessful participant** due to the reasons of intentionally misguiding the training models.
+Lets say that we have a following event `Train the AI model on snake photos` where successful participation will grant each user 10THT. Each user (this is a user f the app that knows these things like Anagolay.photo) broadcast the notification about that event to all its users. Users who decide to participate must follow the rules and requirements of the event, sending the photos with `snakes` only, correctly tagged and titled. Users who follow these rules and correctly send photos upon finished event are considered to be a **successful participant** and therefor can claim their 10THT. Users who send wrong data, photo contains a dog and a cat but it's tagged as a `snake`, are considered **unsuccessful participant** due to the reasons of intentionally misguiding the training models.
 
 > [!NOTE]
 > Although that kind of misbehavior sometimes can be very much welcomed, the point is to conform to the rules of the event.
@@ -93,7 +93,7 @@ https://en.wikipedia.org/wiki/Ownership#Ownership_models
 >
 > <sup>source [Wikipedia Proof(Truth)](<https://en.wikipedia.org/wiki/Proof_(truth)>)</sup>
 
-The Proof in Sensio Network is of the same definition but upgraded with the components that are independently verifiable and calculable. this [Provability logic](https://en.wikipedia.org/wiki/Provability_logic) ?? **@TODO**
+The Proof in Anagolay Network is of the same definition but upgraded with the components that are independently verifiable and calculable. this [Provability logic](https://en.wikipedia.org/wiki/Provability_logic) ?? **@TODO**
 
 ## Original Document ID
 
@@ -104,3 +104,7 @@ The common identifier for the original resource from which the current resource 
 > A remix is a piece of media which has been altered or contorted from its original state by adding, removing, and changing pieces of the item. A song, piece of artwork, books, video, poem, or photograph can all be remixes. The only characteristic of a remix is that it appropriates and changes other materials to create something new.
 >
 > <sup>source [Wikipedia](https://en.wikipedia.org/wiki/Remix)</sup>
+
+## Leaf Operation
+
+Leaf Operation is the deepest child operation in the dependency tree. This opeartion does not have any children, only parent.
