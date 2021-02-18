@@ -1,4 +1,4 @@
-# Proof
+# Proof of Existence
 
 Is a structured final output of the rule. Each proof is different in a few aspects and similar in others.
 
