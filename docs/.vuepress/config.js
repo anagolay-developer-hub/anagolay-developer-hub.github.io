@@ -19,8 +19,11 @@ module.exports = {
   head: [
     // ['link', { rel: 'icon', href: '/assets/favicon.ico' }],
     ['meta', { name: 'theme-color', content: '#D67EFF' }],
+    ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+    ['link', { rel: 'apple-touch-icon', href: '/asset/logo-letter.png' }],
+    ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1' }],
   ],
   dest: 'public',
 
@@ -89,15 +92,15 @@ module.exports = {
         text: 'Glossary',
         link: '/glossary/',
       },
-      {
-        text: 'FAQ',
-        link: '/faq/',
-      },
+      // {
+      //   text: 'FAQ',
+      //   link: '/faq/',
+      // },
     ],
     sidebar: {
       '/sdk/': ['', 'implemented-operations'],
       '/about/': ['', 'getting-started', 'operation', 'rule', 'proof', 'statement'],
-      '/tutorials/': ['proof-of-existence-v0.1.0', 'camera-lens-verification', 'claim-copyright', 'setup-dev-env'],
+      '/tutorials/': ['setup-dev-env'],
       '/': ['', 'about/'],
     },
   },
