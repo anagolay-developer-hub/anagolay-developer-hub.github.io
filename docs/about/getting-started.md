@@ -1,16 +1,34 @@
 # Getting started
 
-::: warning @TODO
-
-migrate the docker image
-
-:::
-
 ## Installation
 
-How to install the Node
+How to install the Node in developer mode
 
-```sh
-
-docker run anagolay/node:latest
+```yaml
+version: '3'
+services:
+  proxy:
+    image: jwilder/nginx-proxy
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./certs:/etc/nginx/certs
+  node:
+    image: sensiogroup/network-node:0.2.0-dev
+    restart: always
+    environment:
+      - VIRTUAL_HOST=network.sensio.photo
+      - VIRTUAL_PORT=9944
+    # ports:
+    #   - "30333:30333"
+    #   - "9933:9933"
+    #   - "9944:9944"
+    volumes:
+      - 'sensio-data:/data'
+    command: sensio --dev  --no-telemetry --rpc-external --unsafe-ws-external --rpc-cors all
+volumes:
+  sensio-data:
 ```

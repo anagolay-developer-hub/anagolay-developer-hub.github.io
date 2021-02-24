@@ -1,84 +1,194 @@
 # Statements
 
-define the statements
+## Overview
+
+Statement is a record that proves the truthfulness of the [Claim](#claim) using user's cryptographic [Signatures](#signatures). On Anagolay every Statement is the product of a transparent process we call [Rule](./rule.md). At this time we support two types of statements, [Copyright](#copyright) and [Ownership](#ownership), more will be added when we see the need for it and practical usecase. The types are part of the network and cannot be deleted, updated or removed by users or validators.
+
+## Definition
+
+Each statement is defined by combining the Claim and the Signatures. The Claim contains the data and the rights about a subject in question while the Signatures contain the signed data which only the holder and issuer can reproduce giving them ultimate assurance of the validity and responsability for the Claim.
+
+The `signatures.holder` is the record that links the user to a Claim, in a way that the `sig` field value is the result of signing the `claim` field with the `sigKey` private key. The `cid` field is the Content Address of the `sig` field and it is used for indexing and quick validation without knowing the actual signature.
+
+The `signatures.sigKey` is a public key fingerprint and publicly available to everyone to verify the validity of the signature. This way the user is responsible to keep the `sigKey` private key always safe and secure, because without it the user cannot recreate the signature when asked to verify the truthfulness of this Claim, namely on the Court or in a dispute over the rights of the Subject of the Claim.
+
+The `signatures.issuer` is the record that links the user or service to the holder of the Claim. Whoever is in this field holds huge responsibility of the Statement validity, because this is the user/account/service that verifies the implemented process and that the information which is signed by both parties is TRUE and irrefutable. Issuers must be publicly known and they stake their reputation and their utility token (THT).
+
+For the time being anyone can be an issuer, but in the future that will be changed to a similar way how validators work.
+
+::: warning
+Being an `issuer` is a huge risk to your name and respactability on the network. If the `issuer` issues the wrong records them and all who back them are slashed and they lose the respactability which has a serious repercussions like not being able to sell/buy/rent/license any of the digital or physical media on the chain.
+:::
+
+## Structure
+
+Statement Example from the chain:
 
 ```ts
-const statementCameraOwnership = {
-  // id = CId(hash(data))
-
-  id: '8tWrg6LXdHSDu93FgPRasHDTPGxY54WKq3hBLDd1NQja5zzNzko5cKjtGPPJJLQXN1v7NTdkkfh2w14QSVpuB3Gbz9',
-
-  data: {
-    signatures: {
-      holder: {
-        sigKey: 'urn:pgp:9cdf8dd38531511968c8d8cb524036585b62f15b',
-        // sign(statement, pvtKey(sigKey))
-        sig:
-          'bfuws2ljnijcuoskoebieoubajvcvgu2bi5cs2ljnfuwq2cswmvzhg2lpny5cat3qmvxfar2qfzvhgidwgqxdmlrsbufeg33nnvsw45b2ebuhi5dqom5c6l3pobsw44dhobvhgltpojtq2cqnbj4ecmceifiw6v2vnnatev2gorutqvttij4tqq3hmriwi5ddgjrxkzcinayfqyzxmvxdg43jmfdts422i5lhsslkn5uvur3mnmgqut3ojzwge2tpgvmteutnj5dve22npjttctl2iuyu2vcfgvhgu2dkj5dvcnczgjetctlkkf3u26szgfhuivtjjzveu3knkrlgsdikjfuxo2lblbhhuzcxkz4us2tpnfneo3dlj5xe43dcnjygswlknbuu6v2vpjhuittijz5gomkpiratctkekjufuvdhpjhuiqjqbufe4rdenjgwuzzsjv5esmcokrdgqtlkmrwus2lxnfrtgvtjmfwvm2teinetmslokz4we2tqpjnfonl2mfltqntdi5uhmzchha3a2cspjbjfsy2vlj4fe22fpbrwwsrqkrvvmmtdnnlewwjsmqzvmmcwkvivknl2jzcxgmcunnyhmujrkjfwi2s2pjseiuspkyyfeninbjktg3dqliyxawcpivfgwulloqyfkwcvgnrvknlikfwemrtdkvyeivcujy2vgmc2nfqwy3dlmrvvurcnnvshkuzsnrnfgm2ojugqusljo5uwgsckozruoolzmrdwy5tcnfetmzlzjizfsv3ygfnfgsjwjvkec52minfdazkyijwes2tpnfruovtzlezfm5lei5dg4dikljjus42jnzhhawrsgruu62kjnrew4mdtjfwu46k2k5ddawsxkjtfswcrnfhwsslzjvceknkmkrcxqtcuiuyvmrcfgnhwuslybufe62sngfgguwjtjvdg62lgmnfgkqsbivlugz2bi5bfcstepj2dmzsbifxuurkgjjau43dimjmxmrtci5nekqsbjzdvizckkztq2csfnbdxgnlmnm3gysknkrngol2spftw6ojlmi2uwwsvm5rwwnkvhf2vmv3fifidsszzjbbu4yrxpiydcn2xnj4eumtzmqyguoinbj5dcvcnknitmtsojvuxosbwpbzwisjwozbwopj5bufd2nzlkjta2crnfuws2lkfjzccauchkaqe2rktknauorjnfuws2li',
-        // sigHash = CID(sig)
-        sigHash: 'bafk2bzaceah3qsqsaqfkqibi3vkknamxockuff3yfxuyib7mxrpkl4ibryshu',
+{
+  statement: {
+    id: "bafy2bzacecucql3wnplymdxesbrriwev3n4jyftzrjckx6wufdrbxxhupvpds",
+    data: {
+      signatures: {
+        holder: {
+          sigKey: "urn:pgp:d6055d4aa2995dd0",
+          sig: "-----BEGIN PGP MESSAGE-----rnVersion: OpenPGP.js v4.10.9rnComment: https://openpgpjs.orgrnrnxA0DAQoW1gVdSqKZXdABy8GedQdtc2cudHh0YC6/VHsicHJldklkIjoiIiwirncG9lSWQiOiJiYWZ5MmJ6YWNlYXd5dzNnaXJ5b2h0Njc0ZGlxN25wbjZ2bmRsrnN2JjeXlnenJmZnNoYnV0Y2pscXA1d3puYSIsInJ1bGVJZCI6ImJhZnkyYnphrnY2VhNHZ6Z2JkbGpmbW1jd3M3ZHRkdHAyZWthYnAycTNyeDUzb3IzM3BmcmtirncjVlemIyNWc0IiwicHJvcG9ydGlvbiI6eyJuYW1lIjoicGVyY2VudCIsInNprnZ24iOiIlIiwidmFsdWUiOiIxMDAifSwic3ViamVjdElkIjoiYmFmeTJiemFjrnZWF3eXczZ2lyeW9odDY3NGRpcTducG42dm5kbDdiY3l5Z3pyZmZzaGJ1dGNqrnbHFwNXd6bmEiLCJob2xkZXIiOiJkaWQ6c3Vic3RyYXRlOjVIbkt0b3N1bWRZrnZkhTaWZZS0JIaE5tb1h2aERBTkNVOGo4djd0YzRwNHBZN01NUC9zZW5zaW8trnbmV0d29yayIsImlzc3VlciI6ImRpZDpzdWJzdHJhdGU6NUhCcjlkU0trVGpXrncjVYTDdaSEdqUUxneGYxbmRmaW43RVJuSmQxaE4yUDd4alR4L3NlbnNpby1urnZXR3b3JrIiwiY2xhaW1UeXBlIjowLCJ2YWxpZCI6eyJmcm9tIjoiMTYxMzY3rnNjM3MTU2NyIsInVudGlsIjoiIn0sImV4cGlyYXRpb24iOnsiZXhwaXJhdGlvrnblR5cGUiOjAsInZhbHVlIjoiIn0sIm9uRXhwaXJhdGlvbiI6IiJ9wnUEARYKrnAAYFAmAuv1QAIQkQ1gVdSqKZXdAWIQQCnhWHhTSDEKSVCdXWBV1Kopld0IParnAP9W97peUbxLDLEBoWorH6XlVRe/Qenk518es5QH0zWJNwEAkbHoW4lvuADjrnS39DUhRS7nnnEGZgMeU8jnhFu8B7fgM=rn=pa7mrn-----END PGP MESSAGE-----rn",
+          cid: "bafy2bzacedr7dikwmxrbggt73dflc743rs7eiyuflfrk7eues5277e2klxyji"
+        },
+        issuer: {
+          sigKey: "urn:substrate:5GoNkf6WdbxCFnPdAnYYQyCjAKPJgLNxXwPjwTh6DGg6gN3E",
+          sig: "0x400cf5e8d030569496c05b4b4352b11139bad545cd87a8a7b06c94dfbe4528ad9ac4cba0b60f7117545e65cb19251cd403205cba7e3d8c96cb29b10ef7670e04",
+          cid: "bafy2bzacedmbmagmy34xuohghted2hhmfp32pqxfztom4g3766svclnu7xohw"
+        }
       },
-      issuer: {
-        sigKey: 'urn:pgp:d1f5e247a976f1e3c14f0a437a6db9962ef3978e',
-        // CID(sign(statement, pvtKey(sigKey)))
-        sig:
-          'bfuws2ljnijcuoskoebieoubajvcvgu2bi5cs2ljnfuwq2cswmvzhg2lpny5cat3qmvxfar2qfzvhgidwgqxdmlrsbufeg33nnvsw45b2ebuhi5dqom5c6l3pobsw44dhobvhgltpojtq2cqnbj4ecmceifiw6v2sjb3w6wlzkjjg63ryij4tqq3hmriwi5ddgjrxkzcinayfqyzxmvxuq43jmfdts422i5lhsslkn5uvur3mnmgqut3ojzwge2tpgvmteutnj5dve22npjttctl2iuyu2vcfgvhgu2dkj5dvcnczgjetctlkkf3u26szgfhuivtjjzveu3knkrlgsdikjfuxo2lblbhhuzcxkz4us2tpnfneo3dlj5xe43dcnjygswlknbuu6v2vpjhuittijz5gomkpiratctkekjufuvdhpjhuiqjqbufe4rdenjgwuzzsjv5esmcokrdgqtlkmrwus2lxnfrtgvtjmfwvm2teinetmslokz4we2tqpjnfonl2mfltqntdi5uhmzchha3a2cspjbjfsy2vlj4fe22fpbrwwsrqkrvvmmtdnnlewwjsmqzvmmcwkvivknl2jzcxgmcunnyhmujrkjfwi2s2pjseiuspkyyfeninbjktg3dqliyxawcpivfgwulloqyfkwcvgnrvknlikfwemrtdkvyeivcujy2vgmc2nfqwy3dlmrvvurcnnvshkuzsnrnfgm2ojugqusljo5uwgsckozruoolzmrdwy5tcnfetmzlzjizfsv3ygfnfgsjwjvkec52minfdazkyijwes2tpnfruovtzlezfm5lei5dg4dikljjus42jnzhhawrsgruu62kjnrew4mdtjfwu46k2k5ddawsxkjtfswcrnfhwsslzjvceknkmkrcxqtcuiuyvmrcfgnhwuslybufe62sngfgguwjtjvdg62lgmnfgkqsbivlugz2bi5bfcstepj2dmz2bifxuurkfki4ewr2nnnkwcsrpfnxg6qsbjnthcmzrgrvq2crymfsugmjwpfxucodhnrcvcrjwlfgwgt2qm5rxcs3xljggkwlrji4til3pifiui5rrnbbguwkgkuzxg6cnj55cw3lojjegemynbjlu45scgvatk42jkfbgumdxjvng6ojzpjcgopj5bufd2ntvmvkq2crnfuws2lkfjzccauchkaqe2rktknauorjnfuws2li',
-        // sigHash = CID(sig)
-        sigHash: 'bafk2bzaceay6b6tb7ddrl7klvhrsvxl464f5mtcvxnkb2c6bu5urdabiastv6',
-      },
-    },
-    claim: {
-      // poe which contains the proof
-      poeCid: '8tXqFqFA1rBtNEvrEJcgwWETANs4K4NJoCTJv6st4NWDySyigZW8BdBKtQu7qNaBQEqJCM3yKFbjYdvFC2gnKiYKsL',
-      // null or the statement.id value which is now revoked, transferred, expired ...
-      prevId: null,
-      // which rule is implemented to obtain this statement
-      ruleId: '8tXqFqFA1rBtNEvrEJcgwWETANs4K4NJoCTJv6st4NWDySyigZW8BdBKtQu7qNaBQEqJCM3yKFbjYdvFC2gsasaKsL',
-      // in which proportion holder holds the statement type
-      proportion: {
-        sign: '%',
-        type: 'percentage',
-        value: 100,
-      },
-      sub: {
-        did: 'urn:serial_number:camera:083031034346',
-        name: 'Daniel Maricic',
-      }, // this could be the poeId of the camera
-      holder: 'did:substrate:5EJA1oSrTx7xYMBerrUHLNktA3P89YHJBeTrevotTQab6gEY/Anagolay-network',
-      issuer: 'did:substrate:Hcd78R7frJfUZHsqgpPEBLeiCZxV29uyyyURaPxB71ojNjy/Anagolay-network',
-      description: `I, $sub.name($sub.did) state that i hold $type of the $DEVICE_NAME in the proportion of $proportion.value $proportion.sign`,
-      // other value is the restriction, figure out how to do statement of restriction
-      type: 'ownership',
-      permission: 'right',
-      valid: {
-        from: '2019-11-15T17:21:35Z',
-        until: '2119-11-15T17:21:35Z', // valid.from + expiration
-      },
-      expiration: {
-        type: 'years',
-        value: 100,
-      },
-      // what happens after the expiration? this is default rule or smart contract that automatically does stuff, like move it to the public domain, transfer to relatives etc... need better definition
-      onExpiration:
-        'urn:Anagolay:network:rule:8tXqFqFA1rBtNEvrEJcgwWETANs4K4NJoCTJv6st4NWDySyigZW8BdBKtQu7qNaBQEqJCM3yKFbjYdvFC2gsasaweed',
-    },
+      claim: {
+        prevId: null,
+        poeId: "bafy2bzaceawyw3giryoht674diq7npn6vndl7bcyygzrffshbutcjlqp5wzna",
+        ruleId: "bafy2bzacea4vzgbdljfmmcws7dtdtp2ekabp2q3rx53or33pfrkbr5ezb25g4",
+        proportion: {
+          sign: "%",
+          name: "percent",
+          value: 100
+        },
+        subjectId: "bafy2bzaceawyw3giryoht674diq7npn6vndl7bcyygzrffshbutcjlqp5wzna",
+        holder: "did:substrate:5HnKtosumdYfHSifYKBHhNmoXvhDANCU8j8v7tc4p4pY7MMP/sensio-network",
+        issuer: "did:substrate:5HBr9dSKkTjWr5XL7ZHGjQLgxf1ndfin7ERnJd1hN2P7xjTx/sensio-network",
+        claimType: COPYRIGHT,
+        valid: {
+          from: 1613676371567,
+          until: null
+        },
+        expiration: {
+          expirationType: FOREVER,
+          value: null
+        },
+        onExpiration: null
+      }
+    }
   },
-};
+  accountId: "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY",
+  blockNumber: 416,176
+}
 ```
 
-## Structure definition
+Typescript interface:
 
-URI scheme is used for:
+```ts
+interface SnProportion {
+  /// Proportion sign, can be %
+  sign: string;
+  name: string;
+  value: string;
+}
 
-1. holder
-2. issuer
-3. subject
-4.
+interface SnValidity {
+  /// When the validity starts, this should be DATE_TIME
+  from: string;
+  /// When validity ends, this is calculate Validity.from + Expiration.value
+  until: string;
+}
 
-## DIDs, Anagolay and Substrate
+enum SnExpirationType {
+  FOREVER,
+  YEARS,
+  MONTHS,
+  DAYS,
+  MINUTES,
+  SECONDS,
+}
 
-We would like to have the way of specifying the did that is generic SUBSTRATE based address and the way to know which service to use in order to get the information and which [service](https://w3c.github.io/did-core/#service-endpoints) is used. the `issuer` is an example where generic substrate did is used with the [DID path](https://w3c.github.io/did-core/#path) property to specify the NETWORK where that address has been used.
+interface SnExpiration {
+  /// Proportion sign, can be %
+  expirationType: SnExpirationType;
+  /// How long is the expiration, if  ExpirationType::FOREVER then this is empty
+  value: string;
+}
 
-Check out the https://kilt.io/
+enum SnSensioClaimType {
+  COPYRIGHT,
+  OWNERSHIP,
+}
 
-`subject` is the device we are talking about. it cannot be PoE must be stored sparately and given correct ID, in case of the camera, it's the SerialNumber, if there are multiple IDs then we figure that out.
+interface SnStatementInfo {
+  statement: {
+    // this is the CID(data)
+    id: SnGenericId;
+    data: {
+      signatures: {
+        holder: {
+          /// signing key in urn/did format 'urn:pgp:9cdf8dd38531511968c8d8cb524036585b62f15b'
+          sigKey: string;
+          /// Signature sign(prepared_statement, pvtKey(sigKey)) and encoded using multibase
+          sig: string;
+          /// Content identifier of the sig field -- CID(sig)
+          cid: SnGenericId;
+        };
+        issuer: {
+          /// signing key in urn/did format 'urn:pgp:9cdf8dd38531511968c8d8cb524036585b62f15b'
+          sigKey: string;
+          /// Signature sign(prepared_statement, pvtKey(sigKey)) and encoded using multibase
+          // https://gitlab.com/sensio_group/sensio-faas/-/blob/master/sp-api/src/plugins/copyright/helpers.ts#L76
+          sig: string;
+          /// Content identifier of the sig field -- CID(sig)
+          cid: SnGenericId;
+        };
+      };
+      claim: {
+        /// Prev Sensio Statement id in case this statement is revoked or changed
+        prevId: SnGenericId;
+        /// PoE id of the record in question.
+        poeId: SnGenericId;
+        /// Implemented rule
+        ruleId: SnGenericId;
+        /// In which proportion the statement is held
+        proportion: SnProportion;
+        /// ATM this is the same as poeId @TODO this should be unique representation of the subject that is NOT poe
+        subjectId: SnGenericId;
+        /// ATM this is the did representation of the substrate based account in format 'did:substrate:5EJA1oSrTx7xYMBerrUHLNktA3P89YHJBeTrevotTQab6gEY/sensio-network', @NOTE this is part of the SENSIO ID which will come later this year
+        holder: SnCreatorId;
+        /// ATM this is the did representation of the substrate based account in format 'did:substrate:Hcd78R7frJfUZHsqgpPEBLeiCZxV29uyyyURaPxB71ojNjy/sensio-network', @NOTE this is part of the SENSIO ID which will come later this year
+        issuer: string;
+        /// Generic type, ATM is Copyright or Ownership
+        claimType: SnSensioClaimType;
+        /// How long this statement is valid
+        valid: SnValidity;
+        /// Setting when the statement should end
+        expiration: SnExpiration;
+        /// What happens after the expiration? this is default rule or smart contract that automatically does stuff, like move it to the public domain, transfer to relatives etc... need better definition
+        onExpiration: string;
+      };
+    };
+  };
+  accountId: string;
+  blockNumber: number;
+}
+```
+
+## Claim
+
+Claim is a factually-oriented proposition that describes the subject Right using the `claimType`. An example of the Claim is when person claims the Copyright or Ownership of particular item and it can back it up with enough evidence ( proofs ). Together with `Signatures` they form the legally valid Statement.
+
+## Signatures
+
+Signatures is the structure of `holder` and `issuer` Signature interfaces. Together they confirm and bind the claim to be seen, verified and valid.
+
+## Copyright
+
+On Anagolay Copyright statement is a exclusive right that holder claims over a subject in question.
+
+## Ownership
+
+On Anagolay Ownership statement is a exclusive right that holder claims over a subject in question.
+
+## Identifiers
+
+On Anagolay network **ALL** properties that end with `id` are [Content Addresses](./../glossary.md#cid) of the corresponding content parameter. On the high level definition the `id` is the CID of the `data` and for the signatures the `cid` is the CID of the `sig` property.
+
+All other properties are identifiers that need to be put in the respective context. For example the `sigKey` is the **URN** based identifier of the public key and its value is the PK fingerprint.
+
+## Resources:
+
+- [https://en.wikipedia.org/wiki/Proposition](https://en.wikipedia.org/wiki/Proposition)
+- [https://en.wikipedia.org/wiki/Statement\_(logic)](<https://en.wikipedia.org/wiki/Statement_(logic)>)
+- [https://opencreds.org/specs/source/identity-credentials/#expressing-an-identity](https://opencreds.org/specs/source/identity-credentials/#expressing-an-identity)
+- [https://w3c-ccg.github.io/ld-cryptosuite-registry/](https://w3c-ccg.github.io/ld-cryptosuite-registry/)
