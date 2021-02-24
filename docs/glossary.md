@@ -40,13 +40,11 @@ Multihash is a protocol for differentiating outputs from various well-establishe
 
 ## Security index
 
-Describes smth
+[Original Source Code](https://gitlab.com/sensio_group/sensio-faas/-/blob/master/client/src/components/Photo/components/SecurityIndex.js)
 
 ## Discovery Index
 
-## Anagolay Blockchain
-
-AnagolayNetwork's blockchain (Anagolay Blockchain) component is built on top of the interoperable [Polkadot Network](https://polkadot.network/) which
+[Original Source Code](https://gitlab.com/sensio_group/sensio-faas/-/blob/master/client/src/components/Photo/components/DiscoveryIndex.js)
 
 ## Successful participation
 
@@ -59,15 +57,11 @@ Lets say that we have a following event `Train the AI model on snake photos` whe
 > [!NOTE]
 > Although that kind of misbehavior sometimes can be very much welcomed, the point is to conform to the rules of the event.
 
-## Parachain
-
-A parachain is an application-specific data structure that is globally coherent and validatable by the validators of the Polkadot relay chain. Most commonly a parachain will take the form of a blockchain, but there is no specific need for them to be actual blockchains. They take their name from the concept of parallelized chains that run parallel to the relay chain.
-
-[Continue reading ...](https://wiki.polkadot.network/docs/en/learn-parachains)
-
 ## User Credibility
 
+::: tip
 WIP
+:::
 
 ## Copyright
 
@@ -97,7 +91,7 @@ The Proof in Anagolay Network is of the same definition but upgraded with the co
 
 ## Original Document ID
 
-The common identifier for the original resource from which the current resource is derived. For example, if you save a resource to a different format, then sa quely identifies the resource in that format, but should retain the ID of the source file here.They are [GUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) Sometimes the cameras are not parsing the ID as they would today, they strip the `-` from the ID and ass it to the metadata. for example `C4CEBFD8B6A782A5E0DC32AFE31D6D09` equals `c4cebfd8-b6a7-82a5-e0dc-32afe31d6d09` . To test it check [Runkit by woss](https://runkit.com/woss/is-uuid-guid)
+The common identifier for the original resource from which the current resource is derived. For example, if you save a resource to a different format, then sa GUID identifies the resource in that format, but should retain the ID of the source file here.They are [GUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) Sometimes the cameras are not parsing the ID as they would today, they strip the `-` from the ID and ass it to the metadata. for example `C4CEBFD8B6A782A5E0DC32AFE31D6D09` equals `c4cebfd8-b6a7-82a5-e0dc-32afe31d6d09` . To test it check [Runkit by woss](https://runkit.com/woss/is-uuid-guid)
 
 ## Remix
 

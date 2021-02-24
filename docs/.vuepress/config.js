@@ -99,7 +99,7 @@ module.exports = {
     ],
     sidebar: {
       '/sdk/': ['', 'implemented-operations'],
-      '/about/': ['', 'getting-started', 'operation', 'rule', 'proof', 'statement'],
+      '/about/': ['', 'getting-started', 'operation', 'rule', 'proof-of-existence', 'statement'],
       '/tutorials/': ['setup-dev-env'],
       '/': ['', 'about/'],
     },
@@ -110,7 +110,6 @@ module.exports = {
    */
   plugins: [
     '@vuepress/plugin-back-to-top',
-    '@vuepress/plugin-medium-zoom',
     'vuepress-plugin-mermaidjs',
     '@vuepress/medium-zoom',
     ['vuepress-plugin-code-copy', true],
