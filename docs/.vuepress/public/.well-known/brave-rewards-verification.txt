@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: anagolay.dev
+Token: 08be52b842d5928bc159c5ab48e28887f3cfef56827321056a909280942841ec
