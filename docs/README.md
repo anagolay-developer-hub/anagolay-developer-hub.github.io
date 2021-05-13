@@ -5,7 +5,7 @@ sidebar: true
 
 # What is Anagolay?
 
-Anagolay is a peer-to-peer network that stores records of Ownership and Copyright for any multi-media. [Proofs](./about/proof.md) and [Statements](./about/statement.md) are one of the stored data types and most user centric. Additionally Anagolay stores the [Rules](./about/rule.md) and [Operations](./about/operation.md) which are the backbone for generating the Proofs and Statements. The last two are developer oriented.
+Anagolay is a peer-to-peer network that stores records of Ownership and Copyright for any multi-media. [Proofs](./about/proof-of-existence.md) and [Statements](./about/statement.md) are one of the stored data types and most user centric. Additionally Anagolay stores the [Rules](./about/rule.md) and [Operations](./about/operation.md) which are the backbone for generating the Proofs and Statements. The last two are developer oriented.
 
 Anagolay comes with built-in economic incentives to ensure the Rules and Operations are correctly implemented, audited and tested by the community.
 
