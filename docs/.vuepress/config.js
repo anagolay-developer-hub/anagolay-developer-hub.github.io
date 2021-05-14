@@ -70,7 +70,7 @@ module.exports = {
     // editLinks: true,
     // editLinkText: 'Edit me',
     lastUpdated: true,
-    logo: '/assets/logo.svg',
+    logo: 'assets/logo.png',
     nav: [
       {
         text: 'Home',
