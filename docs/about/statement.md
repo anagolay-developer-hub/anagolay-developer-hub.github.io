@@ -104,7 +104,7 @@ interface SnExpiration {
   value: string;
 }
 
-enum SnSensioClaimType {
+enum SnAnagolayClaimType {
   COPYRIGHT,
   OWNERSHIP,
 }
@@ -134,7 +134,7 @@ interface SnStatementInfo {
         };
       };
       claim: {
-        /// Prev Sensio Statement id in case this statement is revoked or changed
+        /// Prev Anagolay Statement id in case this statement is revoked or changed
         prevId: SnGenericId;
         /// PoE id of the record in question.
         poeId: SnGenericId;
@@ -149,7 +149,7 @@ interface SnStatementInfo {
         /// ATM this is the did representation of the substrate based account in format 'did:substrate:Hcd78R7frJfUZHsqgpPEBLeiCZxV29uyyyURaPxB71ojNjy/sensio-network', @NOTE this is part of the SENSIO ID which will come later this year
         issuer: string;
         /// Generic type, ATM is Copyright or Ownership
-        claimType: SnSensioClaimType;
+        claimType: SnAnagolayClaimType;
         /// How long this statement is valid
         valid: SnValidity;
         /// Setting when the statement should end

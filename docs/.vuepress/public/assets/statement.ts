@@ -37,8 +37,8 @@ const statementCameraOwnership = {
       },
       ///ATM this is the same as poe_id @TODO this should be unique representation of the subject that is NOT poe
       subject_id: 'bafk...',
-      holder: 'did:substrate:5EJA1oSrTx7xYMBerrUHLNktA3P89YHJBeTrevotTQab6gEY/sensio-network',
-      issuer: 'did:substrate:Hcd78R7frJfUZHsqgpPEBLeiCZxV29uyyyURaPxB71ojNjy/sensio-network',
+      holder: 'did:substrate:5EJA1oSrTx7xYMBerrUHLNktA3P89YHJBeTrevotTQab6gEY/anagolay-network',
+      issuer: 'did:substrate:Hcd78R7frJfUZHsqgpPEBLeiCZxV29uyyyURaPxB71ojNjy/anagolay-network',
       description: `I $sub.name($sub.did) claim the $type of the $DEVICE_NAME in the proportion of $proportion.value $proportion.sign`,
       // other value is the restriction, figure out how to do statement of restriction
       type: 'ownership',
@@ -52,7 +52,7 @@ const statementCameraOwnership = {
       },
       // what happens after the expiration? this is default rule or smart contract that automatically does stuff, like move it to the public domain, transfer to relatives etc... need better definition
       onExpiration:
-        'urn:sensio:network:rule:8tXqFqFA1rBtNEvrEJcgwWETANs4K4NJoCTJv6st4NWDySyigZW8BdBKtQu7qNaBQEqJCM3yKFbjYdvFC2gsasaweed',
+        'urn:anagolay:network:rule:8tXqFqFA1rBtNEvrEJcgwWETANs4K4NJoCTJv6st4NWDySyigZW8BdBKtQu7qNaBQEqJCM3yKFbjYdvFC2gsasaweed',
     },
   },
 };

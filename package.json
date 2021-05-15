@@ -1,7 +1,7 @@
 {
   "name": "anagolay-dev",
   "version": "0.1.0",
-  "description": "Sensio development portal, wiki and knowledge base",
+  "description": "Anagolay development portal, wiki and knowledge base",
   "main": "index.js",
   "authors": {
     "name": "Daniel Maricic",
@@ -10,7 +10,7 @@
   "repository": "https://gitlab.com/anagolay/development-portal",
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "build": "./move-return-textile.sh move && vuepress build docs && ./move-return-textile.sh restore"
   },
   "license": "MIT",
   "devDependencies": {

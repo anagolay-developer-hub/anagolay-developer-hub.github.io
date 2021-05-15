@@ -17,18 +17,18 @@ services:
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - ./certs:/etc/nginx/certs
   node:
-    image: sensiogroup/network-node:0.2.0-dev
+    image: anagolay/node:0.2.0-dev
     restart: always
     environment:
-      - VIRTUAL_HOST=network.sensio.photo
+      - VIRTUAL_HOST=node.anagolay.network
       - VIRTUAL_PORT=9944
     # ports:
     #   - "30333:30333"
     #   - "9933:9933"
     #   - "9944:9944"
     volumes:
-      - 'sensio-data:/data'
-    command: sensio --dev  --no-telemetry --rpc-external --unsafe-ws-external --rpc-cors all
+      - 'anagolay_data:/data'
+    command: anagolay --dev  --no-telemetry --rpc-external --unsafe-ws-external --rpc-cors all
 volumes:
-  sensio-data:
+  anagolay_data:
 ```
