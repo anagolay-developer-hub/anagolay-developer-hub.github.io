@@ -10,7 +10,8 @@
   "repository": "https://gitlab.com/anagolay/development-portal",
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "./move-return-textile.sh move && vuepress build docs && ./move-return-textile.sh restore"
+    "build": "vuepress build docs",
+    "build:local": "./move-return-textile.sh move && vuepress build docs && ./move-return-textile.sh restore"
   },
   "license": "MIT",
   "devDependencies": {
