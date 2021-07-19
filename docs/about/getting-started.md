@@ -20,3 +20,10 @@ services:
 volumes:
   anagolay_data:
 ```
+
+## Populating the chain with the initial data
+
+At this moment there is no simple way to init the chain with the Operations and Rules. We are working hard to provide you with the easy setup. Contact @woss_io on Twitter or on our discord server id you would like to know more. 
+
+For now to interact with the alpha version of the chain please go to [Hosted polkadot explorer](http://dev-explorer.anagolay.network/#/explorer).
+
